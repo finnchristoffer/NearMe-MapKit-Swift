@@ -24,9 +24,11 @@ class ViewController: UIViewController {
     lazy var searchTextField: UITextField = {
        let searchTextField = UITextField()
         searchTextField.layer.cornerRadius = 10
+        searchTextField.delegate = self
         searchTextField.clipsToBounds = true
         searchTextField.backgroundColor = UIColor.white
-        searchTextField.placeholder = "Search"
+        searchTextField.placeholder = "What you wanna search ?"
+        searchTextField.layer.borderWidth = 1
         searchTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
         searchTextField.leftViewMode = .always
         searchTextField.translatesAutoresizingMaskIntoConstraints = false
@@ -85,7 +87,33 @@ class ViewController: UIViewController {
             print("Unknown error. Unable to get location.")
         }
     }
+    
+    private func findNearbyPlaces(by query: String) {
+        
+        mapView.removeAnnotations(mapView.annotations)
+        
+        let request = MKLocalSearch.Request()
+        request.naturalLanguageQuery = query
+        request.region = mapView.region
+        
+        let search = MKLocalSearch(request: request)
+        search.start { response, error in
+            guard let response = response, error == nil else {return}
+            print(response.mapItems)
+        }
+    }
 
+}
+
+extension ViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        let text = textField.text ?? ""
+        if !text.isEmpty {
+            textField.resignFirstResponder()
+            findNearbyPlaces(by: text)
+        }
+        return true
+    }
 }
 
 extension ViewController: CLLocationManagerDelegate {
