@@ -46,7 +46,6 @@
 				2B1BB38981E4218CFC8B7819 /* Pods-NearMe.debug.xcconfig */,
 				64E2D994A4D7AB0CB553F7FF /* Pods-NearMe.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -348,6 +347,8 @@
 				DEVELOPMENT_TEAM = KR56UH6MNG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NearMe/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "NearMe requires location so it can offer nearby points of interest.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "NearMe requires location so it can offer nearby points of interest.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -376,6 +377,8 @@
 				DEVELOPMENT_TEAM = KR56UH6MNG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NearMe/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "NearMe requires location so it can offer nearby points of interest.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "NearMe requires location so it can offer nearby points of interest.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
