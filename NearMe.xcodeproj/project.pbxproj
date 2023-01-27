@@ -12,6 +12,10 @@
 		4A2A93D32981915F00ED4C23 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2A93D22981915F00ED4C23 /* ViewController.swift */; };
 		4A2A93D82981916000ED4C23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A2A93D72981916000ED4C23 /* Assets.xcassets */; };
 		4A2A93DB2981916000ED4C23 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A2A93D92981916000ED4C23 /* LaunchScreen.storyboard */; };
+		4A7066C32982FA6B00B37330 /* PlaceAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7066C22982FA6B00B37330 /* PlaceAnnotation.swift */; };
+		4A7066C62982FB3B00B37330 /* CLLocation+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7066C52982FB3B00B37330 /* CLLocation+Extentions.swift */; };
+		4A7066C9298384A300B37330 /* PlacesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7066C8298384A300B37330 /* PlacesTableViewController.swift */; };
+		4A7066CB2983AEC500B37330 /* PlaceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7066CA2983AEC500B37330 /* PlaceDetailViewController.swift */; };
 		F09E3D52267C18AD5E62845F /* Pods_NearMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E412A31DBB34D0EAB44920DF /* Pods_NearMe.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +28,10 @@
 		4A2A93D72981916000ED4C23 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A2A93DA2981916000ED4C23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4A2A93DC2981916000ED4C23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A7066C22982FA6B00B37330 /* PlaceAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceAnnotation.swift; sourceTree = "<group>"; };
+		4A7066C52982FB3B00B37330 /* CLLocation+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocation+Extentions.swift"; sourceTree = "<group>"; };
+		4A7066C8298384A300B37330 /* PlacesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesTableViewController.swift; sourceTree = "<group>"; };
+		4A7066CA2983AEC500B37330 /* PlaceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailViewController.swift; sourceTree = "<group>"; };
 		64E2D994A4D7AB0CB553F7FF /* Pods-NearMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NearMe.release.xcconfig"; path = "Target Support Files/Pods-NearMe/Pods-NearMe.release.xcconfig"; sourceTree = "<group>"; };
 		E412A31DBB34D0EAB44920DF /* Pods_NearMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NearMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -70,6 +78,9 @@
 		4A2A93CD2981915F00ED4C23 /* NearMe */ = {
 			isa = PBXGroup;
 			children = (
+				4A7066C72983848A00B37330 /* Controllers */,
+				4A7066C42982FB2000B37330 /* Extensions */,
+				4A7066C12982FA5900B37330 /* Annotations */,
 				4A2A93CE2981915F00ED4C23 /* AppDelegate.swift */,
 				4A2A93D02981915F00ED4C23 /* SceneDelegate.swift */,
 				4A2A93D22981915F00ED4C23 /* ViewController.swift */,
@@ -78,6 +89,31 @@
 				4A2A93DC2981916000ED4C23 /* Info.plist */,
 			);
 			path = NearMe;
+			sourceTree = "<group>";
+		};
+		4A7066C12982FA5900B37330 /* Annotations */ = {
+			isa = PBXGroup;
+			children = (
+				4A7066C22982FA6B00B37330 /* PlaceAnnotation.swift */,
+			);
+			path = Annotations;
+			sourceTree = "<group>";
+		};
+		4A7066C42982FB2000B37330 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4A7066C52982FB3B00B37330 /* CLLocation+Extentions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4A7066C72983848A00B37330 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4A7066C8298384A300B37330 /* PlacesTableViewController.swift */,
+				4A7066CA2983AEC500B37330 /* PlaceDetailViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		B1843208FF329E3862EE23AF /* Frameworks */ = {
@@ -202,9 +238,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A7066C62982FB3B00B37330 /* CLLocation+Extentions.swift in Sources */,
+				4A7066C32982FA6B00B37330 /* PlaceAnnotation.swift in Sources */,
+				4A7066CB2983AEC500B37330 /* PlaceDetailViewController.swift in Sources */,
 				4A2A93D32981915F00ED4C23 /* ViewController.swift in Sources */,
 				4A2A93CF2981915F00ED4C23 /* AppDelegate.swift in Sources */,
 				4A2A93D12981915F00ED4C23 /* SceneDelegate.swift in Sources */,
+				4A7066C9298384A300B37330 /* PlacesTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
