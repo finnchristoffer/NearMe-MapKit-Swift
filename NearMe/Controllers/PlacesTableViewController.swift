@@ -15,6 +15,7 @@ class PlacesTableViewController: UITableViewController {
     var userLocation: CLLocation
     var places: [PlaceAnnotation]
     
+    
     init(userLocation: CLLocation, places: [PlaceAnnotation]) {
         self.userLocation = userLocation
         self.places = places
@@ -45,6 +46,7 @@ class PlacesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let place = places[indexPath.row]
         let placeDetailVC = PlaceDetailViewController(place: place)
+        placeDetailVC.modalPresentationStyle = .currentContext
         present(placeDetailVC, animated: true)
     }
     

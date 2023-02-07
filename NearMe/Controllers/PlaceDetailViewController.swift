@@ -37,6 +37,7 @@ class PlaceDetailViewController: UIViewController {
     
     private lazy var addressLabel: UILabel = {
        let label = UILabel()
+        label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.font = UIFont.preferredFont(forTextStyle: .body)
@@ -48,28 +49,25 @@ class PlaceDetailViewController: UIViewController {
         var config = UIButton.Configuration.bordered()
         let button = UIButton(configuration: config)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.tintColor = UIColor.white
+        button.backgroundColor = UIColor.blue
         button.setTitle("Direction", for: .normal)
+        button.layer.cornerRadius = 5
         return button
     }()
     
     private lazy var callButton: UIButton = {
         var config = UIButton.Configuration.bordered()
         let button = UIButton(configuration: config)
+        button.tintColor = UIColor.white
+        button.backgroundColor = UIColor.green
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Call", for: .normal)
+        button.layer.cornerRadius = 5
         return button
     }()
     
-    // MARK: - Lifecycle
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .systemBackground
-    }
-    
-    // MARK: - Helpers
-    
-    private func setupUI() {
+    private lazy var stackView: UIStackView = {
         let stackview = UIStackView()
         stackview.alignment = .leading
         stackview.translatesAutoresizingMaskIntoConstraints = false
@@ -77,11 +75,26 @@ class PlaceDetailViewController: UIViewController {
         stackview.spacing = UIStackView.spacingUseSystem
         stackview.isLayoutMarginsRelativeArrangement = true
         stackview.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 20, leading: 20, bottom: 20, trailing: 20)
+        return stackview
+    }()
+    
+    // MARK: - Lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .systemBackground
+        setupUI()
+        setupConstraints()
+    }
+    
+    // MARK: - Helpers
+    
+    private func setupUI() {
         
         nameLabel.text = place.name
         addressLabel.text = place.address
-        stackview.addArrangedSubview(nameLabel)
-        stackview.addArrangedSubview(addressLabel)
+        stackView.addArrangedSubview(nameLabel)
+        stackView.addArrangedSubview(addressLabel)
         nameLabel.widthAnchor.constraint(equalToConstant: view.bounds.width - 20).isActive = true
         
         let contactStackView = UIStackView()
@@ -95,9 +108,16 @@ class PlaceDetailViewController: UIViewController {
         contactStackView.addArrangedSubview(directionButton)
         contactStackView.addArrangedSubview(callButton)
         
-        stackview.addArrangedSubview(contactStackView)
+        stackView.addArrangedSubview(contactStackView)
         
-        view.addSubview(stackview)
+        view.addSubview(stackView)
+    }
+    
+    
+    private func setupConstraints() {
+        stackView.snp.makeConstraints { make in
+            make.top.left.right.equalToSuperview()
+        }
     }
     
     // MARK: - Selectors
